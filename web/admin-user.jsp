@@ -191,14 +191,11 @@
                                     conn = DatabaseConnection.getConnection();
                                     Statement stmt;
                                     stmt = conn.createStatement();
-                                    String query = "SELECT fname,lname,uemail FROM user";
+                                    String query = "SELECT fname,lname,uemail,tel FROM user";
                                     ResultSet rs = stmt.executeQuery(query);
                                     while (rs.next()) {
 
                                 %>
-
-
-
 
 
                                 <form action="" method="post" enctype="multipart/form-data" id="form-customer">
@@ -207,17 +204,12 @@
                                             <thead>
                                                 <tr>
                                                     <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
-                                                    <td class="text-left">                    <a href=""></a>
-                                                    </td>
-                                                    <td class="text-left">                    <a href=""> </a>
-                                                    </td>
-                                                    <td class="text-left">                    <a href=""></a>
-                                                    </td>
-                                                    <td class="text-left">                    <a href="">Status</a>
-                                                    </td>
-
-                                                    <td class="text-left">                    <a href="">Date Added</a>
-                                                    </td>
+                                                    <td class="text-left"> First Name </td>                  
+                                                    <td class="text-left">Last Name  </td>                 
+                                                    <td class="text-left">Email </td>                  
+                                                    <td class="text-left">Telephone</td>
+                                                                      
+                                                    
                                                     <td class="text-right">Action</td>
                                                 </tr>
                                             </thead>
@@ -229,9 +221,9 @@
                                                     <td class="text-left"><%=rs.getString(1)%></td>
                                                     <td class="text-left"><%=rs.getString(2)%></td>
                                                     <td class="text-left"><%=rs.getString(3)%></td>
-                                                    <td class="text-left">Enabled</td>
+                                                    <td class="text-left"><%=rs.getString(4)%></td>
 
-                                                    <td class="text-left">27/02/2015</td>
+                                                   
                                                     <td class="text-right">  
 
                                                         </div>
