@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="Classes.DatabaseConnection"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -73,7 +77,7 @@
                     </div>
                 </nav>
                 <!--BEGIN MODAL CONFIG PORTLET-->
-                
+
                 <!--END MODAL CONFIG PORTLET-->
             </div>
 
@@ -105,12 +109,12 @@
                                     </i><span class="menu-title">Orders</span></a>
 
                             </li>
-                             <li><a href="admin-settings.jsp"><i class="glyphicon glyphicon-cog">
+                            <li><a href="admin-settings.jsp"><i class="glyphicon glyphicon-cog">
                                         <div class="icon-bg bg-blue"></div>
                                     </i><span class="menu-title">Settings</span></a>
 
                             </li>
-                         
+
                             <li><a href="Email.html"><i class="fa fa-envelope-o">
                                         <div class="icon-bg bg-primary"></div>
                                     </i><span class="menu-title">Email</span></a>
@@ -146,7 +150,7 @@
                     <div class="page-content">
                         <div id="tab-general">
                             <div id="container">
-                             <div class="page-header">
+                                <div class="page-header">
                                     <div class="container-fluid">
                                         <div class="pull-right"><a href="admin-add-new-cus.jsp" data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus">Add New Customer</i></a>
 
@@ -181,17 +185,33 @@
                                         </div>
                                     </div>
                                 </div>
+                                <%
+                                    String useremail = "";
+                                    Connection conn;
+                                    conn = DatabaseConnection.getConnection();
+                                    Statement stmt;
+                                    stmt = conn.createStatement();
+                                    String query = "SELECT fname,lname,uemail FROM user";
+                                    ResultSet rs = stmt.executeQuery(query);
+                                    while (rs.next()) {
+
+                                %>
+
+
+
+
+
                                 <form action="" method="post" enctype="multipart/form-data" id="form-customer">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
-                                                    <td class="text-left">                    <a href="">Customer Name</a>
+                                                    <td class="text-left">                    <a href=""></a>
                                                     </td>
-                                                    <td class="text-left">                    <a href="">E-Mail</a>
+                                                    <td class="text-left">                    <a href=""> </a>
                                                     </td>
-                                                    <td class="text-left">                    <a href="">Customer Telephone</a>
+                                                    <td class="text-left">                    <a href=""></a>
                                                     </td>
                                                     <td class="text-left">                    <a href="">Status</a>
                                                     </td>
@@ -201,20 +221,21 @@
                                                     <td class="text-right">Action</td>
                                                 </tr>
                                             </thead>
+                                            
                                             <tbody>
                                                 <tr>
                                                     <td class="text-center">                    <input type="checkbox" name="selected[]" value="4" />
                                                     </td>
-                                                    <td class="text-left">Dewmin Hasitha rathnayake</td>
-                                                    <td class="text-left">dewminh2@gmail.com</td>
-                                                    <td class="text-left">Default</td>
+                                                    <td class="text-left"><%=rs.getString(1)%></td>
+                                                    <td class="text-left"><%=rs.getString(2)%></td>
+                                                    <td class="text-left"><%=rs.getString(3)%></td>
                                                     <td class="text-left">Enabled</td>
 
                                                     <td class="text-left">27/02/2015</td>
                                                     <td class="text-right">  
 
                                                         </div>
-                                    <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
+                                                        <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
 
                                                         </a>
                                                         <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
@@ -222,7 +243,7 @@
                                                     </td>
                                                 </tr>
 
-
+<%}%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -284,18 +305,18 @@
                         <!--CORE JAVASCRIPT-->
                         <script src="script/main.js"></script>
                         <script>        (function (i, s, o, g, r, a, m) {
-                                                                    i['GoogleAnalyticsObject'] = r;
-                                                                    i[r] = i[r] || function () {
-                                                                        (i[r].q = i[r].q || []).push(arguments)
-                                                                    }, i[r].l = 1 * new Date();
-                                                                    a = s.createElement(o),
-                                                                            m = s.getElementsByTagName(o)[0];
-                                                                    a.async = 1;
-                                                                    a.src = g;
-                                                                    m.parentNode.insertBefore(a, m)
-                                                                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-                                                                ga('create', 'UA-145464-12', 'auto');
-                                                                ga('send', 'pageview');
+                                                                i['GoogleAnalyticsObject'] = r;
+                                                                i[r] = i[r] || function () {
+                                                                    (i[r].q = i[r].q || []).push(arguments)
+                                                                }, i[r].l = 1 * new Date();
+                                                                a = s.createElement(o),
+                                                                        m = s.getElementsByTagName(o)[0];
+                                                                a.async = 1;
+                                                                a.src = g;
+                                                                m.parentNode.insertBefore(a, m)
+                                                            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                                                            ga('create', 'UA-145464-12', 'auto');
+                                                            ga('send', 'pageview');
 
 
                         </script>
