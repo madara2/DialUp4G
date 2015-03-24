@@ -208,12 +208,12 @@
                                                     <td class="text-left">Last Name  </td>                 
                                                     <td class="text-left">Email </td>                  
                                                     <td class="text-left">Telephone</td>
-                                                                      
-                                                    
+
+
                                                     <td class="text-right">Action</td>
                                                 </tr>
                                             </thead>
-                                            
+
                                             <tbody>
                                                 <tr>
                                                     <td class="text-center">                    <input type="checkbox" name="selected[]" value="4" />
@@ -223,7 +223,7 @@
                                                     <td class="text-left"><%=rs.getString(3)%></td>
                                                     <td class="text-left"><%=rs.getString(4)%></td>
 
-                                                   
+
                                                     <td class="text-right">  
 
                                                         </div>
@@ -235,7 +235,7 @@
                                                     </td>
                                                 </tr>
 
-<%}%>
+                                                <%}%>
                                             </tbody>
                                         </table>
                                     </div>
