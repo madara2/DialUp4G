@@ -14,7 +14,7 @@ public class UserMethods {
     public static int saveUserAccount(CustomerRegistration save) {
         int saveCustomer = 0;
         try {
-            String firstName = save.getFirstName();
+            String firstName= save.getFirstName();
             String lastName = save.getLastName();
             String email = save.getEmail();
             String telephone = save.getTelephone();

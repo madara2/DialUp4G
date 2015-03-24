@@ -162,7 +162,7 @@
                     <!--BEGIN CONTENT-->
                     <div class="page-content">
                         <div id="tab-general">
-                            <form action="" method="post" class="form-horizontal">
+                            <form action="AddNewMobile" method="post" class="form-horizontal">
 
                                 <legend>Add New Mobile</legend>
                                 <div class="form-group required">
