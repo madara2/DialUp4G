@@ -1,3 +1,4 @@
+
 <html lang="en">
     <head>        
         <meta charset="utf-8">
@@ -409,9 +410,8 @@
                             <div class="form-group required">
                                 <label class="col-sm-2 control-label" for="input-confirm">Password Confirm</label>
                                 <div class="col-sm-10">
-                                    <input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control"<input title="Please enter the same Password as above" required pattern="(?=.*\d)(?=.*[a-z]).{6,}" name="pwd2" onchange="
-                                        this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
-                                                                                                                                                                "> 
+                                    <input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control"<input title="Please enter the same Password as above" required pattern="(?=.*\d)(?=.*[a-z]).{6,}" name="pwd2" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); "> 
+                                    
                                 </div>
                                 <div>
                                     <br><br>
@@ -471,5 +471,20 @@
                         <img width="70" src="image/catalog/cashondelivery.gif"></p>
                 </div>
             </footer>
-
+<form method="POST" action="..." onsubmit="return checkForm(this);">
+<fieldset>
+<legend>Change Password</legend>
+<p>Username: <input title="Enter your username" type="text" required pattern="\w+" name="username"></p>
+<p>Password: <input title="Password must contain at least 6 characters, including UPPER/lowercase and numbers" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="pwd1" onchange="
+  this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+  if(this.checkValidity()) form.pwd2.pattern = this.value;
+"></p>
+<p>Confirm Password: <input title="Please enter the same Password as above" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="pwd2" onchange="
+  this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+"></p>
+<p><input type="submit" value="Save Changes"></p>
+</fieldset>
+</form>
     </body>
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact
