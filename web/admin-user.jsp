@@ -166,44 +166,34 @@
                                             <div class="well">
                                                 <div class="row">
                                                     <div class="col-sm-3">
+                                                        <form method="get">
                                                         <div class="form-group">
                                                             <label class="control-label" for="input-name">Customer Name</label>
                                                             <input type="text" name="filter_name" value="" placeholder="Customer Name" id="input-name" class="form-control" />
+                                                            
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label" for="input-email">E-Mail</label>
                                                             <input type="text" name="filter_email" value="" placeholder="E-Mail" id="input-email" class="form-control" />
                                                         </div>
+                                                                
                                                     </div>
 
 
                                                     <span class="input-group-btn">
 
                                                     </span></div>
-                                            </div>
-                                            <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> Filter</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <%
-                                    String useremail = "";
-                                    Connection conn;
-                                    conn = DatabaseConnection.getConnection();
-                                    Statement stmt;
-                                    stmt = conn.createStatement();
-                                    String query = "SELECT fname,lname,uemail,tel FROM user";
-                                    ResultSet rs = stmt.executeQuery(query);
-                                    while (rs.next()) {
+                                            </div><button type="submit" class="btn btn-primary pull-right"><i class="fa fa-search"></i>Filter</button>
+                                            
+                                            <br>     <br>
+                                            <form action="" method="post" enctype="multipart/form-data" id="">
 
-                                %>
-
-
-                                <form action="" method="post" enctype="multipart/form-data" id="form-customer">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
+                                                    <td style="width: 1px;" class="text-center"></td>
+                                                    <td class="text-left"> Customer ID </td>  
                                                     <td class="text-left"> First Name </td>                  
                                                     <td class="text-left">Last Name  </td>                 
                                                     <td class="text-left">Email </td>                  
@@ -213,16 +203,30 @@
                                                     <td class="text-right">Action</td>
                                                 </tr>
                                             </thead>
+                                            <%String user =request.getParameter("filter_name");%>
+                                            
+                                               <%
+                                                Connection conn1;
+                                                conn1 = DatabaseConnection.getConnection();
+                                                Statement stmt1;
+                                                stmt1 = conn1.createStatement();
+                                                String query1 = "SELECT user_id,fname,lname,uemail,tel FROM user where user_id='"+user+"'";
+               
+                                                ResultSet rs1 = stmt1.executeQuery(query1);
+                                                while (rs1.next()) {
 
+                                            %>
+                                            
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-center">                    <input type="checkbox" name="selected[]" value="4" />
-                                                    </td>
-                                                    <td class="text-left"><%=rs.getString(1)%></td>
-                                                    <td class="text-left"><%=rs.getString(2)%></td>
-                                                    <td class="text-left"><%=rs.getString(3)%></td>
-                                                    <td class="text-left"><%=rs.getString(4)%></td>
-
+                                                    <td class="text-center">
+                                                    
+                                                                                                                        
+                                                    <td class="text-left"><%=rs1.getString(1)%></td>
+                                                    <td class="text-left"><%=rs1.getString(2)%></td>
+                                                    <td class="text-left"><%=rs1.getString(3)%></td>
+                                                    <td class="text-left"><%=rs1.getString(4)%></td>
+                                                    <td class="text-left"><%=rs1.getString(5)%></td> 
 
                                                     <td class="text-right">  
 
@@ -235,10 +239,77 @@
                                                     </td>
                                                 </tr>
 
-                                                <%}%>
+
                                             </tbody>
+                                            <%}%>
                                         </table>
+
                                     </div>
+
+                                </form>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <form action="" method="post" enctype="multipart/form-data" id="form-customer">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td style="width: 1px;" class="text-center"></td>
+                                                    <td class="text-left"> Customer ID</td>
+                                                    <td class="text-left"> First Name </td>                  
+                                                    <td class="text-left">Last Name  </td>                 
+                                                    <td class="text-left">Email </td>                  
+                                                    <td class="text-left">Telephone</td>
+
+
+                                                    <td class="text-right">Action</td>
+                                                </tr>
+                                            </thead>
+                                            
+
+                                            <%
+                                                Connection conn;
+                                                conn = DatabaseConnection.getConnection();
+                                                Statement stmt;
+                                                stmt = conn.createStatement();
+                                                String query = "SELECT user_id,fname,lname,uemail,tel FROM user";
+               
+                                                ResultSet rs = stmt.executeQuery(query);
+                                                while (rs.next()) {
+
+                                            %>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">                                                                       
+                                                    <td class="text-left"><%=rs.getString(1)%></td>
+                                                    <td class="text-left"><%=rs.getString(2)%></td>
+                                                    <td class="text-left"><%=rs.getString(3)%></td>
+                                                    <td class="text-left"><%=rs.getString(4)%></td>
+                                                    <td class="text-left"><%=rs.getString(5)%></td>
+
+                                                    <td class="text-right">  
+
+                                                        </div>
+                                                        <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
+
+                                                        </a>
+                                                        <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
+
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                            <%}%>
+                                        </table>
+
+                                    </div>
+
                                 </form>
 
                             </div>

@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="Classes.DatabaseConnection"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -59,7 +63,7 @@
                         <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
                             <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Search here..." class="form-control text-white"/></div>
                         </form>
-                       <div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left text-white">News:</span>
+                        <div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left text-white">News:</span>
                             <ul id="news-update" class="ticker list-unstyled">
                                 <li>Welcome to DialUp4G Admin </li>
                                 <li>Our store carries a large assortment and quality assured products. We are devoted to bringing you most major brands of mobile phones and accessories possible with the strong relationship established with our corporate partners</li>
@@ -206,6 +210,67 @@
                                                     </span></div>
                                             </div>
                                             <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> Filter</button>
+                                            <form action="" method="post" enctype="multipart/form-data" id="">
+
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <td style="width: 1px;" class="text-center"></td>
+                                                                <td class="text-left">Item ID </td>  
+                                                                <td class="text-left">Item Image </td>                  
+                                                                <td class="text-left">Make  </td>                 
+                                                                <td class="text-left">Model </td>                  
+                                                                <td class="text-left">Qnt</td>
+                                                                <td class="text-left">Price</td>
+
+                                                                <td class="text-right">Action</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <%String user = request.getParameter("filter_name");%>
+
+                                                        <%
+
+                                                Connection conn1;
+                                                conn1 = DatabaseConnection.getConnection();
+                                                Statement stmt1;
+                                                stmt1 = conn1.createStatement();
+                                                String query1 = "SELECT * from items";
+                                                ResultSet rs = stmt1.executeQuery(query1);
+                                                while (rs.next()) {
+
+                                            %>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">
+
+
+                                                                <td class="text-left"><%=rs.getString(1)%></td>
+                                                                <td><img src="image.jsp?imgid=<%=rs.getString(1)%>" class="img-circle" width="130" height="130"></td>
+                                                                
+                                                                <td class="text-left"><%=rs.getString(3)%></td>
+                                                                <td class="text-left"><%=rs.getString(4)%></td>
+                                                                <td class="text-left"><%=rs.getString(5)%></td> 
+
+                                                                <td class="text-right">  
+
+                                                                    </div>
+                                                                    <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
+
+                                                                    </a>
+                                                                    <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
+
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                        <%}%>
+                                                    </table>
+
+                                                </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -214,35 +279,42 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
-                                                    <td class="text-left">                    <a href="">Mobile ID</a>
-                                                    </td>
-                                                    <td class="text-left">                    <a href="">Mobile Make</a>
-                                                    </td>
-                                                    <td class="text-left">                    <a href="">Mobile Model</a>
-                                                    </td>
-                                                    <td class="text-left">                    <a href="">Quantity </a>
-                                                    </td>
+                                                    <td style="width: 1px;" class="text-center"></td>
+                                                    <td class="text-left"> Item ID </td>  
+                                                    <td class="text-left"> Item Image </td>  
+                                                    <td class="text-left">Make  </td>                 
+                                                    <td class="text-left">Model </td>                  
+                                                    <td class="text-left">Qnt</td>
+                                                    <td class="text-left">Price</td>
 
-                                                    <td class="text-left">                    <a href="">Price</a>
-                                                    </td>
                                                     <td class="text-right">Action</td>
                                                 </tr>
                                             </thead>
+                                            <%
+
+                                                Connection conn;
+                                                conn = DatabaseConnection.getConnection();
+                                                Statement stmt;
+                                                stmt = conn.createStatement();
+                                                String query = "SELECT item_id,item_image,make,model,qnt,price FROM items";
+                                                ResultSet rs1 = stmt.executeQuery(query);
+                                                while (rs.next()) {
+
+                                            %>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-center">                    <input type="checkbox" name="selected[]" value="4" />
-                                                    </td>
-                                                    <td class="text-left">N001</td>
-                                                    <td class="text-left">Nokia</td>
-                                                    <td class="text-left">lumia 525</td>
-                                                    <td class="text-left">100</td>
-                                                    <td class="text-left">19000</td>
+                                                    <td class="text-center">                                                                       
+                                                    <td class="text-left"><%=rs1.getString(1)%></td>
+                                                    <td class="text-left"><%=rs1.getString(2)%></td>
+                                                    <td class="text-left"><%=rs1.getString(3)%></td>
+                                                    <td class="text-left"><%=rs1.getString(4)%></td>
+                                                    <td class="text-left"><%=rs1.getString(5)%></td>
+                                                    <td class="text-left"><%=rs1.getString(6)%></td>
+
                                                     <td class="text-right">  
 
                                                         </div>
-
-                                                        <a href="admin-edit-item.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
+                                                        <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
 
                                                         </a>
                                                         <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
@@ -252,7 +324,9 @@
 
 
                                             </tbody>
+                                            <%}%>
                                         </table>
+
                                     </div>
                                 </form>
 
