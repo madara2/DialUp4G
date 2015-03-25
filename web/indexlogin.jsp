@@ -48,7 +48,7 @@
                     <ul class="nav navbar-nav">
 
                     </ul>
-                    <form class="navbar-form navbar-left" role="search" style="margin-left: 0px; padding-left: 585px;">
+                    <form class="navbar-form navbar-left" role="search" style="margin-left: 0px; padding-left: 560px;">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
@@ -79,7 +79,7 @@
 
 
         <!-- left menu1 -->
-        <div class="col-lg-2"style="width: 350px;">
+        <div class="col-lg-2"style="width: 330px;">
             <ul class="nav nav-pills nav-stacked"style="width: 280px;">
                 <li class="active"><a <i class="fa fa-home fa-fw"></i>Category</a></li>
                 <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>APPLE</a></li>
@@ -101,7 +101,7 @@
 
                     </div> 
 
-                    <div class="centertext"> <p class="bg-title">v</p>
+                    <div> <p class="bg-title">v</p>
 
                         <div class="row">
 
