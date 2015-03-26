@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="Classes.DatabaseConnection"%>
+<%@page import="java.sql.Connection"%>
 <html lang="en">
     <head>        
         <meta charset="utf-8">
@@ -112,7 +116,7 @@
                                     <li><h4>Change your Password <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal1">Click Here</h4></button></li></li>
                                 </ul>
                                 <h2>My Orders</h2>
-
+                                <h4>View Your Order status <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal3">Click Here</h4></button></li></li>
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -160,8 +164,9 @@
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -472,3 +477,100 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                  <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">My Account Details</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                
+                                               <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td style="width: 1px;" class="text-center"></td>
+                                                    <td class="text-left">Order ID </td> 
+                                                    <td class="text-left">Order Status</td>
+                                                    <td class="text-left">No. of Products </td>                  
+                                                    <td class="text-left">Customer Name  </td>                 
+                                                    <td class="text-left">Total </td>                  
+                                                    
+
+
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <%String user =request.getParameter("filter_name");%>
+                                            
+                                               <%
+                                                Connection conn1;
+                                                conn1 = DatabaseConnection.getConnection();
+                                                Statement stmt1;
+                                                stmt1 = conn1.createStatement();
+                                                String query1 = "SELECT user_id,fname,lname,uemail,tel FROM user where user_id='"+user+"'";
+               
+                                                ResultSet rs1 = stmt1.executeQuery(query1);
+                                                while (rs1.next()) {
+
+                                            %>
+                                            
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">
+                                                    
+                                                                                                                        
+                                                    <td class="text-left"></td>
+                                                    <td class="text-left"></td>
+                                                    <td class="text-left"></td>
+                                                    <td class="text-left"></td>
+                                                    <td class="text-left"></td> 
+
+                                                    <td class="text-right">  
+
+                                                        </div>
+                                                        <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
+
+                                                        </a>
+                                                        <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
+
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                            <%}%>
+                                        </table>
+
+                                    </div>  
+                                                
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
