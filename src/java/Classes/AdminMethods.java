@@ -7,7 +7,6 @@ package Classes;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import Classes.Mobile;
 
 /**
  *
@@ -37,8 +36,9 @@ public class AdminMethods {
 
             conn = DatabaseConnection.getConnection();
             stmt = conn.createStatement();
+
             query = "INSERT INTO items(item_id,make,model,network,launch,display,platform,memory,camera,qnt,price)VALUES('" + item_id + "','" + make + "','" + model + "','" + network + "','" + launch + "','" + display + "','" + platform + "','" + memory + "','" + camera + "','" + qnt + "','" + price + "')";
-            saveMobile = stmt.executeUpdate(query);
+            stmt.executeUpdate(query);
             if(saveMobile==1){
                 System.out.println("Data Saved methods");
             }else{

@@ -72,10 +72,11 @@ public class AddNewMobile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
          Mobile save = new Mobile();
         int saveMobile =0 ;
         try {
+            save.setItem_id(request.getParameter("mobileid"));
             save.setMake(request.getParameter("make"));
             save.setModel(request.getParameter("model"));
             save.setNetwork(request.getParameter("network"));
@@ -95,7 +96,7 @@ public class AddNewMobile extends HttpServlet {
             } else {
                 System.out.println("Daata not saved");
             }
-        } catch (Exception ex) {
+        } catch (NumberFormatException | IOException ex) {
             System.out.println(ex);
             ex.getMessage();
         }

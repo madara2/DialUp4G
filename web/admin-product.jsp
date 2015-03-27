@@ -231,15 +231,15 @@
 
                                                         <%
 
-                                                Connection conn1;
-                                                conn1 = DatabaseConnection.getConnection();
-                                                Statement stmt1;
-                                                stmt1 = conn1.createStatement();
-                                                String query1 = "SELECT * from items";
-                                                ResultSet rs = stmt1.executeQuery(query1);
-                                                while (rs.next()) {
+                                                            Connection conn;
+                                                            conn = DatabaseConnection.getConnection();
+                                                            Statement stmt;
+                                                            stmt = conn.createStatement();
+                                                            String query = "SELECT item_image  from items";
+                                                            ResultSet rs = stmt.executeQuery(query);
+                                                            while (rs.next()) {
 
-                                            %>
+                                                        %>
 
                                                         <tbody>
                                                             <tr>
@@ -248,7 +248,7 @@
 
                                                                 <td class="text-left"><%=rs.getString(1)%></td>
                                                                 <td><img src="image.jsp?imgid=<%=rs.getString(1)%>" class="img-circle" width="130" height="130"></td>
-                                                                
+
                                                                 <td class="text-left"><%=rs.getString(3)%></td>
                                                                 <td class="text-left"><%=rs.getString(4)%></td>
                                                                 <td class="text-left"><%=rs.getString(5)%></td> 
@@ -291,25 +291,23 @@
                                                 </tr>
                                             </thead>
                                             <%
-
-                                                Connection conn;
                                                 conn = DatabaseConnection.getConnection();
-                                                Statement stmt;
+
                                                 stmt = conn.createStatement();
-                                                String query = "SELECT item_id,item_image,make,model,qnt,price FROM items";
-                                                ResultSet rs1 = stmt.executeQuery(query);
+                                                query = "SELECT item_id,item_image,make,model,qnt,price FROM items";
+                                                rs = stmt.executeQuery(query);
                                                 while (rs.next()) {
 
                                             %>
                                             <tbody>
                                                 <tr>
                                                     <td class="text-center">                                                                       
-                                                    <td class="text-left"><%=rs1.getString(1)%></td>
-                                                    <td class="text-left"><%=rs1.getString(2)%></td>
-                                                    <td class="text-left"><%=rs1.getString(3)%></td>
-                                                    <td class="text-left"><%=rs1.getString(4)%></td>
-                                                    <td class="text-left"><%=rs1.getString(5)%></td>
-                                                    <td class="text-left"><%=rs1.getString(6)%></td>
+                                                    <td class="text-left"><%=rs.getString(1)%></td>
+                                                    <td class="text-left"><%=rs.getString(2)%></td>
+                                                    <td class="text-left"><%=rs.getString(3)%></td>
+                                                    <td class="text-left"><%=rs.getString(4)%></td>
+                                                    <td class="text-left"><%=rs.getString(5)%></td>
+                                                    <td class="text-left"><%=rs.getString(6)%></td>
 
                                                     <td class="text-right">  
 

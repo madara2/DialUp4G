@@ -5,10 +5,6 @@
  */
 package Classes;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
 /**
  *
  * @author Dewmin
