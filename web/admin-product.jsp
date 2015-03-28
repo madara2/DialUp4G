@@ -249,9 +249,9 @@
                                                                 <td class="text-left"><%=rs.getString(1)%></td>
                                                                 <td><img src="image.jsp?imgid=<%=rs.getString(1)%>" class="img-circle" width="130" height="130"></td>
 
-                                                                <td class="text-left"><%=rs.getString(3)%></td>
-                                                                <td class="text-left"><%=rs.getString(4)%></td>
-                                                                <td class="text-left"><%=rs.getString(5)%></td> 
+                                                                <td class="text-left"><%=rs.getString(1)%></td>
+                                                                <td class="text-left"><%=rs.getString(1)%></td>
+                                                                <td class="text-left"><%=rs.getString(1)%></td> 
 
                                                                 <td class="text-right">  
 

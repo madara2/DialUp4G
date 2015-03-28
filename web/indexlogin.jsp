@@ -44,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="color: #0099ff;">DialUp4G</a>
+                    <a class="navbar-brand" href="indexlogin.jsp" style="color: #0099ff;">DialUp4G</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,7 +59,7 @@
                         <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></button>
                     </form>
                     <a href="#" class="btn btn-info"style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-shopping-cart"></span> Shoping Cart</a>
-                     <a href="#" class="btn btn-info"Style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-eye-open"></span>watch List</a>
+                    <a href="use-wishlist.jsp" class="btn btn-info"Style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-heart"></span>wish List</a>
 
                     <ul class="nav navbar-nav navbar-right">
 
@@ -74,7 +74,7 @@
                             </ul>
                         </li>
                     </ul>
-                </div> </div></nav>          
+                </div> </div></nav>        
 	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
 	<div id="wowslider-container0">
 	<div class="ws_images"><ul>
@@ -106,10 +106,11 @@
 		<a href="#" title=""><span><img src="data0/tooltips/1_9.jpg" alt=""/>11</span></a>
 		<a href="#" title=""><span><img src="data0/tooltips/1_1_0.jpg" alt=""/>12</span></a>
 		<a href="#" title=""><span><img src="data0/tooltips/1_1_1.jpg" alt=""/>13</span></a>
+                <script type="text/javascript" src="engine0/wowslider.js"></script>
+	<script type="text/javascript" src="engine0/script.js"></script>
 	</div></div><div class="ws_shadow"></div>
 	</div>	
-	<script type="text/javascript" src="engine0/wowslider.js"></script>
-	<script type="text/javascript" src="engine0/script.js"></script>
+	
 	<!-- End WOWSlider.com BODY section --><!-- /.container-fluid -->
        
         <hr>

@@ -29,63 +29,63 @@
 </head>
  
        <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">My Account Details</h4>
+<div class="container">
+  <ul class="breadcrumb">
+        <li><a href="http://aviatorcmb.com/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
+        <li><a href="http://aviatorcmb.com/index.php?route=checkout/cart">Shopping Cart</a></li>
+        <li><a href="http://aviatorcmb.com/index.php?route=checkout/checkout">Checkout</a></li>
+      </ul>
+    <div class="row">                <div id="content" class="col-sm-12">      <h1>Checkout</h1>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Step 1: Checkout Options</h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-checkout-option">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+                <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Step 2: Account &amp; Billing Details</h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+                        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Step 3: Delivery Details</h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-shipping-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Step 4: Delivery Method</h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-shipping-method">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+                <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Step 5: Payment Method</h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-method">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Step 6: Confirm Order</h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-checkout-confirm">
+            <div class="panel-body"></div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <form action="CreateUserAndLoginUser" method="post" class="form-horizontal">
-                        <fieldset id="account">
-                            <legend>Your Personal Details</legend>
-                            <div class="form-group required" style="display: none;">
-                                <label class="col-sm-2 control-label">Customer Group</label>
-                                <div class="col-sm-10">
-
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" >First Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="firstname"  placeholder="First Name"  class="form-control" required="" />
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" >Last Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="lastname" placeholder="Last Name" class="form-control"required="" />
-                                </div>
-                            </div>
-
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" >E-Mail</label>
-                                <div class="col-sm-10">
-                                    <input type="email" name="email" placeholder="E-Mail"  class="form-control" required=""/>
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" >Telephone</label>
-                                <div class="col-sm-10">
-                                    <input type="tel" name="telephone" placeholder="Telephone"  class="form-control" required=""/>
-                                </div>
-                            </div>
-
-                        </fieldset>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
-  </div>
 </div>
-
-<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
