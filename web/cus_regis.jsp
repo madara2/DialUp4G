@@ -13,6 +13,7 @@
         <link href="styles/bootstrap-theme.css" rel="stylesheet">
         <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
         <link href="styles/new.css" rel="stylesheet">
+        <link href="styles/valid.css" rel="stylesheet">
 
 
         <!--aditional CSS imports-->
