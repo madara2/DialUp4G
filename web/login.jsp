@@ -13,6 +13,7 @@
         <link href="styles/bootstrap-theme.css" rel="stylesheet">
         <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
         <link href="styles/new.css" rel="stylesheet">
+        <link href="styles/logincss.css" rel="stylesheet">
 
 
         <!--aditional CSS imports-->
@@ -22,7 +23,8 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="script/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="script/bootstrap.min.js"></script>  
+        <script src="script/bootstrap.min.js"></script>
+        <script src="script/loginjs.js"></script>
         <!--script src="script/jquery.js"></script--> 
         <!--aditional JS imports-->
 
@@ -77,37 +79,44 @@
                 </div> </div></nav> 
 
     </head>
-    <body>
-      <div class="container">
-
-        
-      </ul>
-      <div class="row">                <div id="content" class="col-sm-9">      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <h2>New Customer</h2>
-            <p><strong>Register Account</strong></p>
-            <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
-            <a href="cus_regis.jsp" class="btn btn-primary">Continue</a></div>
-        </div>
-        <div class="col-sm-6">
-          <div class="well">
-            <h2>Returning Customer</h2>
-            <p><strong>I am a returning customer</strong></p>
-            <form method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <label class="control-label" for="input-email">E-Mail Address</label>
-                <input type="text" name="email" value="" placeholder="E-Mail Address" id="input-email" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password">Password</label>
-                <input type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control" />
-                <a href="http://aviatorcmb.com/index.php?route=account/forgotten">Forgotten Password</a></div>
-              <input type="submit" value="Login" class="btn btn-primary" />
-                          </form>
+   </head>
+    
+    <div class="container">
+  
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+      <section class="login-form">
+        <form method="post" action="#" role="login">
+          
+          <input type="email" name="email" placeholder="Email" required class="form-control input-lg" placeholde="Your Email" />
+          
+          <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          
+          
+          <div class="pwstrength_viewport_progress"></div>
+          
+          
+          <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+          <div>
+            <a href="#">Create account</a> or <a href="#">reset password</a>
           </div>
+          
+        </form>
+        
+        <div class="form-links">
+          <a href="#">www.website.com</a>
         </div>
+      </section>  
       </div>
-      </div>
-    </body>
-</html>
+      
+      <div class="col-md-4"></div>
+      
+
+  </div>
+  
+      
+  
+  
+</div>
