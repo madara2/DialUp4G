@@ -14,10 +14,11 @@
         <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
         <link href="styles/new.css" rel="stylesheet">
         <link href="styles/logincss.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Courgette">
 
-
-        <!--aditional CSS imports-->
-
+         <!--aditional CSS imports-->
+            
         <!--aditional CSS imports end-->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -34,9 +35,10 @@
 	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
 	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
 	<!--script type="text/javascript" src="engine0/jquery.js"></script-->
-	<!-- End WOWSlider.com HEAD section --></head>
-    <body class="container-fluid" style="padding: 5px;">
-        <nav class="navbar navbar-default">
+	<!-- End WOWSlider.com HEAD section -->
+    </head>
+    <body class="container-fluid" style="">
+        <nav class="navbar navbar-default" style="margin-bottom: 0px">
             <div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -54,15 +56,7 @@
                     <ul class="nav navbar-nav">
 
                     </ul>
-                    <form class="navbar-form navbar-left" role="search" style="margin-left: 0px; padding-left: 560px;">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></button>
-                    </form>
-                    <a href="#" class="btn btn-info"style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-shopping-cart"></span> Shoping Cart</a>
-                    <a href="use-wishlist.jsp" class="btn btn-info"Style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-heart"></span>wish List</a>
-
+                    
                     <ul class="nav navbar-nav navbar-right">
 
                         <li class="dropdown">
@@ -79,15 +73,19 @@
                 </div> </div></nav> 
 
     </head>
-   </head>
     
-    <div class="container">
-  
+   <div class="container" style="background-image: url(image/login.jpg);height: 615px; width: 1350px ">
+        
   <div class="row" id="pwd-container">
+      
     <div class="col-md-4"></div>
     
     <div class="col-md-4">
+        
       <section class="login-form">
+          <div class="text-center"style=" font-family: 'Lobster', serif;font-size: 48px;" >DialUp4G</div>
+         
+<br>
         <form method="post" action="#" role="login">
           
           <input type="email" name="email" placeholder="Email" required class="form-control input-lg" placeholde="Your Email" />
@@ -104,10 +102,6 @@
           </div>
           
         </form>
-        
-        <div class="form-links">
-          <a href="#">www.website.com</a>
-        </div>
       </section>  
       </div>
       

@@ -181,7 +181,7 @@
                                 <div class="form-group required">
                                     <label class="col-sm-2 control-label" >Model</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="Model"placeholder="Model"  class="form-control"required="" />
+                                        <input type="text" name="modelnew"placeholder="Model"  class="form-control"required="" />
                                     </div>
                                 </div>
                                 <div class="form-group required">

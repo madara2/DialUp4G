@@ -78,7 +78,7 @@ public class AddNewMobile extends HttpServlet {
         try {
             save.setItem_id(request.getParameter("mobileid"));
             save.setMake(request.getParameter("make"));
-            save.setModel(request.getParameter("model"));
+            save.setModel(request.getParameter("modelnew"));
             save.setNetwork(request.getParameter("network"));
             save.setLaunch(request.getParameter("launch"));
             save.setDisplay(request.getParameter("display"));

@@ -22,6 +22,7 @@
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="script/jquery.min.js"></script>
+        <script src="script/loginjs.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="script/bootstrap.min.js"></script>  
         <!--script src="script/jquery.js"></script--> 
@@ -80,7 +81,7 @@
         <div class="container"
              <div class="row">                <div id="content" class="col-sm-9">      <h1>Register Account</h1>
                     <p>If you already have an account with us, please login at the <a href="login.jsp">login page</a>.</p>
-                    <form action="CreateUserAndLoginUser" method="post" class="form-horizontal">
+                    <form action="CreateUserAndLoginUser" method="post" class="form-horizontal" >
                         <fieldset id="account">
                             <legend>Your Personal Details</legend>
                             <div class="form-group required" style="display: none;">
@@ -404,25 +405,20 @@
                         </fieldset>
                         <fieldset>
                             <legend>Your Password</legend>
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" for="input-password">Password</label>
+                               <div class="form-group required">
+                                <label class="col-sm-2 control-label" >Password</label>
                                 <div class="col-sm-10">
-                                    <input title="Password must contain at least 6 characters, including numbers" type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control"required pattern="(?=.*\d)(?=.*[a-z])(?=.*[a-z]).{6,}" name="pwd1" onchange="
-                                        this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
-                                        if (this.checkValidity())
-                                            form.pwd2.pattern = this.value;
-                                           " />
+                                    <input type="password" class="form-control input-sm" id="password" placeholder="Password" required="" />
+ <div class="pwstrength_viewport_progress"></div></div>
+ 
+                            </div>
+                               <div class="form-group required">
+                                <label class="col-sm-2 control-label" >Password Conform</label>
+                                <div class="col-sm-10">
+                                              <input type="password" class="form-control input-sm" id="conform" placeholder="Password" required="" />
+
                                 </div>
                             </div>
-
-                            <div class="form-group required">
-                                <label class="col-sm-2 control-label" for="input-confirm">Password Confirm</label>
-                                <div class="col-sm-10">
-                                    <input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control"<input title="Please enter the same Password as above" required pattern="(?=.*\d)(?=.*[a-z]).{6,}" name="pwd2" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); "> 
-                                    
-                                </div>
-                                <div>
-                                    <br><br>
 
 
                                     <input type="submit" value="Continue" class="btn btn-primary" />
