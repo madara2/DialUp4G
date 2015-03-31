@@ -1,3 +1,9 @@
+
+
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="Classes.DatabaseConnection"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -141,10 +147,21 @@
 
                     </div> 
 
+                                            
                     <div> <p class="bg-title">v</p>
 
                         <div class="row">
+<%
+                                                Connection conn;
+                                                conn = DatabaseConnection.getConnection();
+                                                Statement stmt;
+                                                stmt = conn.createStatement();
+                                                String query = "SELECT make,model,item_image,price,qnt FROM items";
+               
+                                                ResultSet rs = stmt.executeQuery(query);
+                                                while (rs.next()) {
 
+                                            %>
                             <!--Grid System-->
                             <div class="col-lg-3"style="  padding: 0px;" >
 
@@ -154,7 +171,7 @@
                                     <!--panel heading/title-->
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            Item: #213213631858
+                                            <%=rs.getString(1)%> <%=rs.getString(2)%>
                                         </h6>
                                     </div>
 
@@ -162,7 +179,7 @@
                                     <div class="panel-body">
 
 
-                                        <img src="image/1.jpg" class="img-circle img-responsive center-block" alt="Item image" width="150px" height="150px">
+                                        <img src="image/<%=rs.getString(3)%>" class="  center-block" alt="Item image" width="150px" height="200px">
 
 
                                         <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
@@ -172,7 +189,7 @@
                                                 </span>
 
                                                 <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
-                                                    <b>LKR 120000</b>
+                                                    <b>LKR <%=rs.getString(4)%></b>
                                                 </span>
                                             </div>
                                         </div>
@@ -187,7 +204,7 @@
                                             </span>
                                             <input type="number" class="form-control" value="1" required="">
                                             <span class="input-group-addon">  							
-                                                Stock: 10
+                                                Stock: <%=rs.getString(5)%>
                                             </span>
                                         </div>
 
@@ -213,7 +230,7 @@
 
                             </div>             
 
-
+<%}%>
 
                            
 
