@@ -160,30 +160,27 @@
 
                                     <!--panel body-->
                                     <div class="panel-body">
-                                        
+
 
                                         <img src="image/1.jpg" class="img-circle img-responsive center-block" alt="Item image" width="150px" height="150px">
 
-                                        
-                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign">View Item </i></a>
-                                        <div class="input-group"style=>
-                                            <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
-                                                <b>Price</b>
-                                            </span>
-                                            
-                                            <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
-                                                <b>LKR 120000</b>
-                                            </span>
-                                        </div>
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 120000</b>
+                                                </span>
+                                            </div>
                                         </div>
 
                                     </div>
 
                                     <!--panel footer-->
                                     <div class="panel-footer">
-                                        
-                                         
-
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 Quantity
@@ -217,139 +214,11 @@
                             </div>             
 
 
-                            <div class="col-lg-3"style="  padding: 1px;" >
 
-                                <!--panel of item-->
-                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
-
-                                    <!--panel heading/title-->
-                                    <div class="panel-heading">
-                                        <h6 class="panel-title">
-                                            Item: #213213631858
-                                        </h6>
-                                    </div>
-
-                                    <!--panel body-->
-                                    <div class="panel-body">
-
-                                        <img src="image/nokia/nokia-lumia-2520.png" class=" img-responsive center-block" alt="Item image" width="150px" height="150px">
-
-                                        <br/>
-
-                                        <button type="button" class="btn btn-primary btn-sm btn-block" aria-label="Left Align">
-                                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                                            View Item
-                                        </button>
-                                    </div>
-
-                                    <!--panel footer-->
-                                    <div class="panel-footer">
-
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                Quantity
-                                            </span>
-                                            <input type="number" class="form-control" value="1" required="">
-                                            <span class="input-group-addon">  							
-                                                Stock: 10
-                                            </span>
-                                        </div>
-
-                                        <br/>
-
-                                        <div class="btn-group btn-group-sm" role="group">
-                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                                                Buy Now
-                                            </button>
-                                            <button type="button" class="btn btn-info" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                                Add To Cart
-                                            </button>
-                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                                Save
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>       
-
-                            <div class="col-lg-3"style="  padding: 1px;" >
-
-                                <!--panel of item-->
-                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
-
-                                    <!--panel heading/title-->
-                                    <div class="panel-heading">
-                                        <h6 class="panel-title">
-                                            Item: #213213631858
-                                        </h6>
-                                    </div>
-
-                                    <!--panel body-->
-                                    <div class="panel-body">
-
-                                        <img src="image/Desire 320.jpg" class="img-circle img-responsive center-block" alt="Item image" width="150px" height="150px">
-
-                                        <br/>
-
-                                        <button type="button" class="btn btn-primary btn-sm btn-block" aria-label="Left Align">
-                                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                                            View Item
-                                        </button>
-                                    </div>
-
-                                    <!--panel footer-->
-                                    <div class="panel-footer">
-
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                Quantity
-                                            </span>
-                                            <input type="number" class="form-control" value="1" required="">
-                                            <span class="input-group-addon">  							
-                                                Stock: 10
-                                            </span>
-                                        </div>
-
-                                        <br/>
-
-                                        <div class="btn-group btn-group-sm" role="group">
-                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                                                Buy Now
-                                            </button>
-                                            <button type="button" class="btn btn-info" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                                Add To Cart
-                                            </button>
-                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                                Save
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>       
-                        </div> 
+                           
 
 
-
-
-
-
-
-
-
-
-
-
-                        <br>        
+                        </div>
 
                     </div>
 

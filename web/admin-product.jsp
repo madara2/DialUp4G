@@ -25,24 +25,7 @@
         <link type="text/css" rel="stylesheet" href="styles/style-responsive.css">
         <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
         <link type="text/css" rel="stylesheet" href="styles/pace.css">
-        <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css"><!-- Bootstrap CSS-->
-        <link href="styles/bootstrap.css" rel="stylesheet">
-        <link href="styles/bootstrap.min.css" rel="stylesheet">
-        <link href="styles/bootstrap-theme.css" rel="stylesheet">
-        <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="styles/new.css" rel="stylesheet">
-        <link href="styles/valid.css" rel="stylesheet">
-
-        <!--aditional CSS imports-->
-
-        <!--aditional CSS imports end-->
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="script/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="script/bootstrap.min.js"></script>  
-        <script src="script/jquery.js"></script> 
-        <!--aditional JS imports-->
+        <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
     </head>
     <body class="container-fluid">
         <div>
@@ -79,7 +62,7 @@
                             <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle">mynew<span class="badge badge-yellow"></span></a>
 
                             </li>
-                            <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle">&nbsp;<span class="hidden-xs">ADMIN</span>&nbsp;<span class="caret"></span></a>
+                            <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle">&nbsp;<span class="hidden-xs">Robert John</span>&nbsp;<span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-user pull-right">
 
                                     <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
@@ -118,10 +101,10 @@
                             </li>
                             <li><a href="admin-user.jsp"><i class="fa fa-user">
                                         <div class="icon-bg bg-green"></div>
-                                    </i><span class="menu-title">Users</span></a>
+                                    </i><span class="menu-title">Customers</span></a>
 
                             </li>
-                            <li><a href="admin-order.jsp"><i class="fa fa-edit fa-fw">
+                            <li ><a href="admin-order.jsp"><i class="fa fa-edit fa-fw">
                                         <div class="icon-bg bg-violet"></div>
                                     </i><span class="menu-title">Orders</span></a>
 
@@ -131,7 +114,6 @@
                                     </i><span class="menu-title">Settings</span></a>
 
                             </li>
-
 
                             <li><a href="Email.html"><i class="fa fa-envelope-o">
                                         <div class="icon-bg bg-primary"></div>
@@ -152,12 +134,12 @@
                     <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                         <div class="page-header pull-left">
                             <div class="page-title">
-                                Product</div>
+                                Customers</div>
                         </div>
                         <ol class="breadcrumb page-breadcrumb pull-right">
                             <li><i class="fa fa-home"></i>&nbsp;<a href="admin-dashboard.jsp">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                            <li class="hidden"><a href="#">Product</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                            <li class="active">Product</li>
+                            <li class="hidden"><a href="#">Products</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                            <li class="active">Products</li>
                         </ol>
                         <div class="clearfix">
                         </div>
@@ -170,7 +152,7 @@
                             <div id="container">
                                 <div class="page-header">
                                     <div class="container-fluid">
-                                        <div class="pull-right"><a href="admin-add-new-item.jsp" data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus">Add New Mobile</i></a>
+                                        <div class="pull-right"><a href="admin-add-new-item.jsp.jsp" data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus">Add New Product</i></a>
 
                                         </div>
                                     </div>
@@ -178,136 +160,73 @@
                                 <div class="container-fluid">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <h3 class="panel-title"><i class="fa fa-list"></i> Mobile List</h3>
+                                            <h3 class="panel-title"><i class="fa fa-list"></i> Product List</h3>
                                         </div>
                                         <div class="panel-body">
                                             <div class="well">
                                                 <div class="row">
                                                     <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="input-name">Mobile ID </label>
-                                                            <input type="text" name="filter_moble" value="" placeholder="Customer Name" id="input-name" class="form-control" />
+                                                        <form method="get">
+                                                       <div class="form-group">
+                                                            <label class="control-label" for="input-name">Mobil ID</label>
+                                                            <input type="text" name="filter_mobileid" value="" placeholder="Mobile ID" id="input-mobileid" class="form-control" />
+                                                            
                                                         </div>
-
-                                                    </div>
-                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label class="control-label" for="input-mobile-brand">Mobile Brand</label>
-                                                            <input type="text" name="filter_brand" value="" placeholder="Brand" id="input-brand" class="form-control" />
+                                                            <label class="control-label" for="input-email">Mobile Model</label>
+                                                            <input type="text" name="filter_model" value="" placeholder="Mobile Model" id="input-mobilemodel" class="form-control" />
                                                         </div>
+                                                                
                                                     </div>
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="input-mobile-model">Mobile Model</label>
-                                                            <input type="text" name="filter_model" value="" placeholder="Modell" id="input-email" class="form-control" />
-                                                        </div>
-                                                    </div>
-
 
 
                                                     <span class="input-group-btn">
 
                                                     </span></div>
-                                            </div>
-                                            <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> Filter</button>
+                                            </div><button type="submit" class="btn btn-primary pull-right"><i class="fa fa-search"></i>Filter</button>
+                                            
+                                            <br>     <br>
                                             <form action="" method="post" enctype="multipart/form-data" id="">
 
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <td style="width: 1px;" class="text-center"></td>
-                                                                <td class="text-left">Item ID </td>  
-                                                                <td class="text-left">Item Image </td>                  
-                                                                <td class="text-left">Make  </td>                 
-                                                                <td class="text-left">Model </td>                  
-                                                                <td class="text-left">Qnt</td>
-                                                                <td class="text-left">Price</td>
-
-                                                                <td class="text-right">Action</td>
-                                                            </tr>
-                                                        </thead>
-                                                        <%String user = request.getParameter("filter_name");%>
-
-                                                        <%
-
-                                                            Connection conn;
-                                                            conn = DatabaseConnection.getConnection();
-                                                            Statement stmt;
-                                                            stmt = conn.createStatement();
-                                                            String query = "SELECT item_image  from items";
-                                                            ResultSet rs = stmt.executeQuery(query);
-                                                            while (rs.next()) {
-
-                                                        %>
-
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="text-center">
-
-
-                                                                <td class="text-left"><%=rs.getString(1)%></td>
-                                                                <td><img src="image.jsp?imgid=<%=rs.getString(1)%>" class="img-circle" width="130" height="130"></td>
-
-                                                                <td class="text-left"><%=rs.getString(1)%></td>
-                                                                <td class="text-left"><%=rs.getString(1)%></td>
-                                                                <td class="text-left"><%=rs.getString(1)%></td> 
-
-                                                                <td class="text-right">  
-
-                                                                    </div>
-                                                                    <a href="admin-edit-cus.jsp" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i>
-
-                                                                    </a>
-                                                                    <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
-
-                                                                </td>
-                                                            </tr>
-
-
-                                                        </tbody>
-                                                        <%}%>
-                                                    </table>
-
-                                                </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <form action="" method="post" enctype="multipart/form-data" id="form-customer">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <td style="width: 1px;" class="text-center"></td>
-                                                    <td class="text-left"> Item ID </td>  
-                                                    <td class="text-left"> Item Image </td>  
-                                                    <td class="text-left">Make  </td>                 
-                                                    <td class="text-left">Model </td>                  
-                                                    <td class="text-left">Qnt</td>
-                                                    <td class="text-left">Price</td>
+                                                    <td class="text-left"> Mobile ID </td>  
+                                                    <td class="text-left"> Mobile Image </td>                  
+                                                    <td class="text-left">Mobile Make  </td>                 
+                                                    <td class="text-left">Mobile Model </td>                  
+                                                    <td class="text-left">quantity </td>
+                                                     <td class="text-left">Price </td>
 
                                                     <td class="text-right">Action</td>
                                                 </tr>
                                             </thead>
-                                            <%
-                                                conn = DatabaseConnection.getConnection();
-
-                                                stmt = conn.createStatement();
-                                                query = "SELECT item_id,item_image,make,model,qnt,price FROM items";
-                                                rs = stmt.executeQuery(query);
-                                                while (rs.next()) {
+                                           <%String item =request.getParameter("filter_mobileid");%>
+                                            
+                                           <%
+                                                Connection conn1;
+                                                conn1 = DatabaseConnection.getConnection();
+                                                Statement stmt1;
+                                                stmt1 = conn1.createStatement();
+                                                String query1 = "SELECT item_id,item_image,make,model,qnt,price FROM items where item_id='"+item+"'";
+               
+                                                ResultSet rs1 = stmt1.executeQuery(query1);
+                                                while (rs1.next()) {
 
                                             %>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-center">                                                                       
-                                                    <td class="text-left"><%=rs.getString(1)%></td>
-                                                    <td class="text-left"><%=rs.getString(2)%></td>
-                                                    <td class="text-left"><%=rs.getString(3)%></td>
-                                                    <td class="text-left"><%=rs.getString(4)%></td>
-                                                    <td class="text-left"><%=rs.getString(5)%></td>
-                                                    <td class="text-left"><%=rs.getString(6)%></td>
+                                                    <td class="text-center">
+                                                    
+                                                                                                                               
+                                                    <td class="text-left"><%=rs1.getString(1)%></td>
+                                                    <td class="text-left"><img style="width: 75px;height: 100px;" src="image/<%=rs1.getString(2) %>"></td>
+                                                    <td class="text-left"><%=rs1.getString(3)%></td>
+                                                    <td class="text-left"><%=rs1.getString(4)%></td>
+                                                    <td class="text-left"><%=rs1.getString(5)%></td>
+                                                    <td class="text-left"><%=rs1.getString(6)%></td>
 
                                                     <td class="text-right">  
 
@@ -326,6 +245,64 @@
                                         </table>
 
                                     </div>
+
+                                </form>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <form action="" method="post" enctype="multipart/form-data" id="form-customer">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td style="width: 1px;" class="text-center"></td>
+                                                    <td class="text-left"> Mobile ID </td>  
+                                                    <td class="text-left"> Mobile Image </td>                  
+                                                    <td class="text-left">Mobile Make  </td>                 
+                                                    <td class="text-left">Mobile Model </td>                  
+                                                    <td class="text-left">quantity </td>
+                                                     <td class="text-left">Price </td>
+
+
+                                                   
+                                                </tr>
+                                            </thead>
+                                            
+
+                                            <%
+                                                Connection conn;
+                                                conn = DatabaseConnection.getConnection();
+                                                Statement stmt;
+                                                stmt = conn.createStatement();
+                                                String query = "SELECT item_id,item_image,make,model,qnt,price FROM items";
+               
+                                                ResultSet rs = stmt.executeQuery(query);
+                                                while (rs.next()) {
+
+                                            %>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">                                                                       
+                                                    <td class="text-left"><%=rs.getString(1)%></td>
+                                                    <td class="text-left"><img style="width: 75px;height: 100px;" src="image/<%=rs.getString(2) %>"></td>
+                                                    <td class="text-left"><%=rs.getString(3)%></td>
+                                                    <td class="text-left"><%=rs.getString(4)%></td>
+                                                    <td class="text-left"><%=rs.getString(5)%></td>
+                                                    <td class="text-left"><%=rs.getString(5)%></td>
+                                                    
+                                                </tr>
+
+
+                                            </tbody>
+                                            <%}%>
+                                        </table>
+
+                                    </div>
+
                                 </form>
 
                             </div>
