@@ -28,11 +28,11 @@
 
         <!--aditional JS imports end-->
 
-    
-	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
-	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
-	<!--script type="text/javascript" src="engine0/jquery.js"></script-->
-	<!-- End WOWSlider.com HEAD section --></head>
+
+        <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+        <link rel="stylesheet" type="text/css" href="engine0/style.css" />
+        <!--script type="text/javascript" src="engine0/jquery.js"></script-->
+        <!-- End WOWSlider.com HEAD section --></head>
     <body class="container-fluid" style="padding: 5px;">
         <nav class="navbar navbar-default">
             <div>
@@ -69,50 +69,50 @@
                                 <li><a href="#">Registration</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Login</a></li>
-                                
-                                
+
+
                             </ul>
                         </li>
                     </ul>
                 </div> </div></nav>        
-	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-	<div id="wowslider-container0">
-	<div class="ws_images"><ul>
-		<li><img src="data0/images/1_1.png" alt="" title="" id="wows0_0"/></li>
-		<li><img src="data0/images/1_2.jpg" alt="" title="" id="wows0_1"/></li>
-		<li><img src="data0/images/1_2_0.png" alt="" title="" id="wows0_2"/></li>
-		<li><img src="data0/images/1_3.jpg" alt="" title="" id="wows0_3"/></li>
-		<li><img src="data0/images/1_3_0.png" alt="" title="" id="wows0_4"/></li>
-		<li><img src="data0/images/1_4.jpg" alt="" title="" id="wows0_5"/></li>
-		<li><img src="data0/images/1_5.jpg" alt="" title="" id="wows0_6"/></li>
-		<li><img src="data0/images/1_6.jpg" alt="" title="" id="wows0_7"/></li>
-		<li><img src="data0/images/1_7.jpg" alt="" title="" id="wows0_8"/></li>
-		<li><img src="data0/images/1_8.jpg" alt="" title="" id="wows0_9"/></li>
-		<li><img src="data0/images/1_9.jpg" alt="" title="" id="wows0_10"/></li>
-		<li><img src="data0/images/1_1_0.jpg" alt="" title="" id="wows0_11"/></a></li>
-		<li><img src="data0/images/1_1_1.jpg" alt="" title="" id="wows0_12"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title=""><span><img src="data0/tooltips/1_1.png" alt=""/>1</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_2.jpg" alt=""/>2</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_2_0.png" alt=""/>3</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_3.jpg" alt=""/>4</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_3_0.png" alt=""/>5</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_4.jpg" alt=""/>6</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_5.jpg" alt=""/>7</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_6.jpg" alt=""/>8</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_7.jpg" alt=""/>9</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_8.jpg" alt=""/>10</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_9.jpg" alt=""/>11</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_1_0.jpg" alt=""/>12</span></a>
-		<a href="#" title=""><span><img src="data0/tooltips/1_1_1.jpg" alt=""/>13</span></a>
-                <script type="text/javascript" src="engine0/wowslider.js"></script>
-	<script type="text/javascript" src="engine0/script.js"></script>
-	</div></div><div class="ws_shadow"></div>
-	</div>	
-	
-	<!-- End WOWSlider.com BODY section --><!-- /.container-fluid -->
-       
+        <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+        <div id="wowslider-container0">
+            <div class="ws_images"><ul>
+                    <li><img src="data0/images/1_1.png" alt="" title="" id="wows0_0"/></li>
+                    <li><img src="data0/images/1_2.jpg" alt="" title="" id="wows0_1"/></li>
+                    <li><img src="data0/images/1_2_0.png" alt="" title="" id="wows0_2"/></li>
+                    <li><img src="data0/images/1_3.jpg" alt="" title="" id="wows0_3"/></li>
+                    <li><img src="data0/images/1_3_0.png" alt="" title="" id="wows0_4"/></li>
+                    <li><img src="data0/images/1_4.jpg" alt="" title="" id="wows0_5"/></li>
+                    <li><img src="data0/images/1_5.jpg" alt="" title="" id="wows0_6"/></li>
+                    <li><img src="data0/images/1_6.jpg" alt="" title="" id="wows0_7"/></li>
+                    <li><img src="data0/images/1_7.jpg" alt="" title="" id="wows0_8"/></li>
+                    <li><img src="data0/images/1_8.jpg" alt="" title="" id="wows0_9"/></li>
+                    <li><img src="data0/images/1_9.jpg" alt="" title="" id="wows0_10"/></li>
+                    <li><img src="data0/images/1_1_0.jpg" alt="" title="" id="wows0_11"/></a></li>
+                    <li><img src="data0/images/1_1_1.jpg" alt="" title="" id="wows0_12"/></li>
+                </ul></div>
+            <div class="ws_bullets"><div>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_1.png" alt=""/>1</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_2.jpg" alt=""/>2</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_2_0.png" alt=""/>3</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_3.jpg" alt=""/>4</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_3_0.png" alt=""/>5</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_4.jpg" alt=""/>6</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_5.jpg" alt=""/>7</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_6.jpg" alt=""/>8</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_7.jpg" alt=""/>9</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_8.jpg" alt=""/>10</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_9.jpg" alt=""/>11</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_1_0.jpg" alt=""/>12</span></a>
+                    <a href="#" title=""><span><img src="data0/tooltips/1_1_1.jpg" alt=""/>13</span></a>
+                    <script type="text/javascript" src="engine0/wowslider.js"></script>
+                    <script type="text/javascript" src="engine0/script.js"></script>
+                </div></div><div class="ws_shadow"></div>
+        </div>	
+
+        <!-- End WOWSlider.com BODY section --><!-- /.container-fluid -->
+
         <hr>
     <body>
     <body class="container" style="padding: 0px;">
@@ -160,18 +160,29 @@
 
                                     <!--panel body-->
                                     <div class="panel-body">
+                                        
 
                                         <img src="image/1.jpg" class="img-circle img-responsive center-block" alt="Item image" width="150px" height="150px">
 
-                                        <br/>
+                                        
                                         <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign">View Item </i></a>
-
+                                        <div class="input-group"style=>
+                                            <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                <b>Price</b>
+                                            </span>
+                                            
+                                            <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                <b>LKR 120000</b>
+                                            </span>
+                                        </div>
                                         </div>
 
                                     </div>
 
                                     <!--panel footer-->
                                     <div class="panel-footer">
+                                        
+                                         
 
                                         <div class="input-group">
                                             <span class="input-group-addon">
@@ -221,7 +232,7 @@
                                     <!--panel body-->
                                     <div class="panel-body">
 
-                                        <img src="image/1.jpg" class="img-circle img-responsive center-block" alt="Item image" width="150px" height="150px">
+                                        <img src="image/nokia/nokia-lumia-2520.png" class=" img-responsive center-block" alt="Item image" width="150px" height="150px">
 
                                         <br/>
 

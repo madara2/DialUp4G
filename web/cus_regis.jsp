@@ -23,6 +23,7 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="script/jquery.min.js"></script>
         <script src="script/loginjs.js"></script>
+        <script src="script/boostrap-validate.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="script/bootstrap.min.js"></script>  
         <!--script src="script/jquery.js"></script--> 
@@ -81,7 +82,7 @@
         <div class="container"
              <div class="row">                <div id="content" class="col-sm-9">      <h1>Register Account</h1>
                     <p>If you already have an account with us, please login at the <a href="login.jsp">login page</a>.</p>
-                    <form action="CreateUserAndLoginUser" method="post" class="form-horizontal" >
+                    <form action="CreateUserAndLoginUser" method="post" class="form-horizontal" data-toggle="boostrap-validate" >
                         <fieldset id="account">
                             <legend>Your Personal Details</legend>
                             <div class="form-group required" style="display: none;">
@@ -415,7 +416,7 @@
                                <div class="form-group required">
                                 <label class="col-sm-2 control-label" >Password Conform</label>
                                 <div class="col-sm-10">
-                                              <input type="password" class="form-control input-sm" id="conform" placeholder="Password" required="" />
+                                              <input type="password" class="form-control input-sm" id="conform" data-match="#password" data-match-error="Whoops, these don't match" placeholder="Password Conform" required="" />
 
                                 </div>
                             </div>
