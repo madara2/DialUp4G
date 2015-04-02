@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>        
         <meta charset="utf-8">
@@ -22,13 +23,16 @@
         <script src="script/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="script/bootstrap.min.js"></script>  
-        <script src="script/jquery.js"></script> 
+        <!--script src="script/jquery.js"></script--> 
         <!--aditional JS imports-->
 
         <!--aditional JS imports end-->
 
-    </head>
-
+    
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
+	<!--script type="text/javascript" src="engine0/jquery.js"></script-->
+	<!-- End WOWSlider.com HEAD section --></head>
     <body class="container-fluid" style="padding: 5px;">
         <nav class="navbar navbar-default">
             <div>
@@ -40,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="color: #0099ff;">DialUp4G</a>
+                    <a class="navbar-brand" href="indexlogin.jsp" style="color: #0099ff;">DialUp4G</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,32 +52,29 @@
                     <ul class="nav navbar-nav">
 
                     </ul>
-                    <form class="navbar-form navbar-left" role="search" style="margin-left: 00px; padding-left: 585px;">
+                    <form class="navbar-form navbar-left" role="search" style="margin-left: 0px; padding-left: 560px;">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
                         <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></button>
                     </form>
                     <a href="#" class="btn btn-info"style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-shopping-cart"></span> Shoping Cart</a>
-                    <a href="#" class="btn btn-info"Style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-eye-open"></span>watch List</a>
+                    <a href="use-wishlist.jsp" class="btn btn-info"Style="padding-top: 6px;padding-bottom: 10.000;margin-top: 5px;"><span class="glyphicon glyphicon-heart"></span>wish List</a>
 
                     <ul class="nav navbar-nav navbar-right">
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Registration</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">Login</a></li>
+                                
+                                
                             </ul>
                         </li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-
+                </div> </div></nav> 
     <body>
     <body class="container" style="padding: 5px;">
 

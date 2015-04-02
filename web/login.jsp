@@ -13,24 +13,32 @@
         <link href="styles/bootstrap-theme.css" rel="stylesheet">
         <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
         <link href="styles/new.css" rel="stylesheet">
+        <link href="styles/logincss.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Courgette">
 
-
-        <!--aditional CSS imports-->
-
+         <!--aditional CSS imports-->
+            
         <!--aditional CSS imports end-->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="script/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="script/bootstrap.min.js"></script>  
-        <script src="script/jquery.js"></script> 
+        <script src="script/bootstrap.min.js"></script>
+        <script src="script/loginjs.js"></script>
+        <!--script src="script/jquery.js"></script--> 
         <!--aditional JS imports-->
 
         <!--aditional JS imports end-->
 
+    
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
+	<!--script type="text/javascript" src="engine0/jquery.js"></script-->
+	<!-- End WOWSlider.com HEAD section -->
     </head>
-    <body class="container-fluid" style="padding: 5px;">
-            <nav class="navbar navbar-default">
+    <body class="container-fluid" style="">
+        <nav class="navbar navbar-default" style="margin-bottom: 0px">
             <div>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -40,67 +48,69 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" style="color: #0099ff">DialUp 4G</a>
+                    <a class="navbar-brand" href="indexlogin.jsp" style="color: #0099ff;">DialUp4G</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group"style="margin-left:100px;">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-
-
-                        <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shoping Cart</a>
-                        <a href="#" class="btn btn-info"><span class=" glyphicon glyphicon-heart"></span> wish list</a>
-                        <a href="login.jsp" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                    </form> 
-
-                    <ul class="nav navbar-nav navbar-right"> 
-
 
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+                    
+                    <ul class="nav navbar-nav navbar-right">
 
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Registration</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Login</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div> </div></nav> 
 
     </head>
-    <body>
-      <div class="container">
-
+    
+   <div class="container" style="background-image: url(image/login.jpg);height: 615px; width: 1350px ">
         
-      </ul>
-      <div class="row">                <div id="content" class="col-sm-9">      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <h2>New Customer</h2>
-            <p><strong>Register Account</strong></p>
-            <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
-            <a href="cus_regis.jsp" class="btn btn-primary">Continue</a></div>
-        </div>
-        <div class="col-sm-6">
-          <div class="well">
-            <h2>Returning Customer</h2>
-            <p><strong>I am a returning customer</strong></p>
-            <form method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <label class="control-label" for="input-email">E-Mail Address</label>
-                <input type="text" name="email" value="" placeholder="E-Mail Address" id="input-email" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password">Password</label>
-                <input type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control" />
-                <a href="http://aviatorcmb.com/index.php?route=account/forgotten">Forgotten Password</a></div>
-              <input type="submit" value="Login" class="btn btn-primary" />
-                          </form>
+  <div class="row" id="pwd-container">
+      
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+        
+      <section class="login-form">
+          <div class="text-center"style=" font-family: 'Lobster', serif;font-size: 48px;" >DialUp4G</div>
+         
+<br>
+        <form method="post" action="#" role="login">
+          
+          <input type="email" name="email" placeholder="Email" required class="form-control input-lg" placeholde="Your Email" />
+          
+          <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          
+          
+          <div class="pwstrength_viewport_progress"></div>
+          
+          
+          <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+          <div>
+            <a href="#">Create account</a> or <a href="#">reset password</a>
           </div>
-        </div>
+          
+        </form>
+      </section>  
       </div>
-      </div>
-    </body>
-</html>
+      
+      <div class="col-md-4"></div>
+      
+
+  </div>
+  
+      
+  
+  
+</div>

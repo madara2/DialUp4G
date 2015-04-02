@@ -18,35 +18,34 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-                     <%
-  //String id =  request.getParameter("imgid");
-  try{      
-    
-      
-    Connection conn= DatabaseConnection.getConnection();
-    Statement st=conn.createStatement();
-    String query = "select item_image from items where item_id='H02' ";
-    ResultSet rs = st.executeQuery(query);
-    //out.print(id);
-    String imgLen="";
-    if(rs.next()){
-      imgLen = rs.getString(1);
-      out.print(imgLen);
-       }  
-    rs = st.executeQuery(query);
-    if(rs.next()){
-      int len = imgLen.length();
-      byte [] rb = new byte[len];
-      InputStream readImg = rs.getBinaryStream(1);
-      int index=readImg.read(rb, 0, len);  
-      st.close();
-      response.reset();
-      response.getOutputStream().write(rb,0,len) ;
-      response.getOutputStream().flush();        
-    }
-  }
-  catch (Exception e){
-    e.printStackTrace();
-  }
-%>
+        <%
+            String id = request.getParameter("imgid");
+            try {                             
+                             
+               
+                Connection conn = DatabaseConnection.getConnection();
+                Statement st = conn.createStatement();
+                String query = "select item_image from items where item_id='"+id+"  ' ";
+                ResultSet rs = st.executeQuery(query);
+                out.print(id);
+                String imgLen = "";
+                if (rs.next()) {
+                    imgLen = rs.getString(1);
+                    out.print(imgLen);
+                }                             
+                rs = st.executeQuery(query);
+                if (rs.next()) {
+                    int len = imgLen.length();
+                    byte[] rb = new byte[len];
+                    InputStream readImg = rs.getBinaryStream(1);
+                    int index = readImg.read(rb, 0, len);                                 
+                    st.close();
+                    response.reset();
+                    response.getOutputStream().write(rb, 0, len);
+                    response.getOutputStream().flush();                                 
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        %>
     </body></html>

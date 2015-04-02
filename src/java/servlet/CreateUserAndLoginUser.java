@@ -86,12 +86,11 @@ public class CreateUserAndLoginUser extends HttpServlet {
             save.setCountry(request.getParameter("country_id"));
             save.setPass(request.getParameter("password"));
             save.setPassconf(request.getParameter("confirm"));
-            String name = request.getParameter("firstname");
 
             saveCustomer = UserMethods.saveUserAccount(save);
             if (saveCustomer == 1) {
                 System.out.println("Data savded");
-                response.sendRedirect("top.jsp");
+                //response.sendRedirect("top.jsp");
             } else {
                 System.out.println("Daata not saved");
             }
@@ -99,6 +98,7 @@ public class CreateUserAndLoginUser extends HttpServlet {
             System.out.println(ex);
             ex.getMessage();
         }
+       
     }
 
     /**
