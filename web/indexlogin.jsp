@@ -1,9 +1,10 @@
 
 
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="Classes.DatabaseConnection"%>
-<%@page import="java.sql.Connection"%>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -145,9 +146,119 @@
                     <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>SAMSUNG</a></li>
                     <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>SONY</a></li>
 
-                    </div> 
+                    
+                    <div id="fb-root"></div>
+                    <script>(function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id))
+                                return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-like-box" data-href="https://www.facebook.com/pages/DialUp-4G/662747223843885" data-width="300px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
 
+
+                    </div> 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	//how much items per page to show
+	var show_per_page = 9; 
+	//getting the amount of elements inside content div
+	var number_of_items = $('#content').children().size();
+	//calculate the number of pages we are going to have
+	var number_of_pages = Math.ceil(number_of_items/show_per_page);
+	
+	//set the value of our hidden input fields
+	$('#current_page').val(0);
+	$('#show_per_page').val(show_per_page);
+	
+	//now when we got all we need for the navigation let's make it '
+	
+	/* 
+	what are we going to have in the navigation?
+		- link to previous page
+		- links to specific pages
+		- link to next page
+	*/
+	var navigation_html = '<a class="previous_link" href="javascript:previous();">Prev</a>';
+	var current_link = 0;
+	while(number_of_pages > current_link){
+		navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a>';
+		current_link++;
+	}
+	navigation_html += '<a class="next_link" href="javascript:next();">Next</a>';
+	
+	$('#page_navigation').html(navigation_html);
+	
+	//add active_page class to the first page link
+	$('#page_navigation .page_link:first').addClass('active_page');
+	
+	//hide all the elements inside content div
+	$('#content').children().css('display', 'none');
+	
+	//and show the first n (show_per_page) elements
+	$('#content').children().slice(0, show_per_page).css('display', 'block');
+	
+});
+
+function previous(){
+	
+	new_page = parseInt($('#current_page').val()) - 1;
+	//if there is an item before the current active link run the function
+	if($('.active_page').prev('.page_link').length==true){
+		go_to_page(new_page);
+	}
+	
+}
+
+function next(){
+	new_page = parseInt($('#current_page').val()) + 1;
+	//if there is an item after the current active link run the function
+	if($('.active_page').next('.page_link').length==true){
+		go_to_page(new_page);
+	}
+	
+}
+function go_to_page(page_num){
+	//get the number of items shown per page
+	var show_per_page = parseInt($('#show_per_page').val());
+	
+	//get the element number where to start the slice from
+	start_from = page_num * show_per_page;
+	
+	//get the element number where to end the slice
+	end_on = start_from + show_per_page;
+	
+	//hide all children elements of content div, get specific items and show them
+	$('#content').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+	
+	/*get the page link that has longdesc attribute of the current page and add active_page class to it
+	and remove that class from previously active page link*/
+	$('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+	
+	//update the current page input field
+	$('#current_page').val(page_num);
+}
+  
+</script>
+<style>
+#page_navigation a{
+	padding:3px;
+	border:1px solid gray;
+	margin:2px;
+	color:black;
+	text-decoration:none
+}
+.active_page{
+	background:darkblue;
+	color:white !important;
+}
+</style>
                                             
+<<<<<<< HEAD
                     <div> <p class="bg-title">v</p>
 
                         <div class="row">
@@ -162,8 +273,17 @@
                                                 while (rs.next()) {
 
                                             %>
+=======
+        <div class="col-lg-9"> <p class="bg-title">v</p>
+
+                            <input type='hidden' id='current_page' />
+	<input type='hidden' id='show_per_page' />
+                        <div class="row"  id='content'>
+
+>>>>>>> origin/master
                             <!--Grid System-->
-                            <div class="col-lg-3"style="  padding: 0px;" >
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
 
                                 <!--panel of item-->
                                 <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
@@ -171,7 +291,7 @@
                                     <!--panel heading/title-->
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <%=rs.getString(1)%> <%=rs.getString(2)%>
+                                            HTC HTC 8XT
                                         </h6>
                                     </div>
 
@@ -179,7 +299,7 @@
                                     <div class="panel-body">
 
 
-                                        <img src="image/<%=rs.getString(3)%>" class="  center-block" alt="Item image" width="150px" height="200px">
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
 
 
                                         <div ><a href="mobiledetails.jsp?device=<%rs.getString(0)%>" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
@@ -189,7 +309,7 @@
                                                 </span>
 
                                                 <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
-                                                    <b>LKR <%=rs.getString(4)%></b>
+                                                    <b>LKR 29900</b>
                                                 </span>
                                             </div>
                                         </div>
@@ -204,7 +324,7 @@
                                             </span>
                                             <input type="number" class="form-control" value="1" required="">
                                             <span class="input-group-addon">  							
-                                                Stock: <%=rs.getString(5)%>
+                                                Stock: 100
                                             </span>
                                         </div>
 
@@ -230,27 +350,855 @@
 
                             </div>             
 
-<%}%>
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC 8XT
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample3
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample4
+
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample5
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample6
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample 7
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample8
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample 10
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample11
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            HTC HTC sample12
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/htc-8xt.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 29900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            Nokia Lumia 525
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/nokia-lumia-525.jpg" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 19800</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 100
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
+                            <!--Grid System-->
+	
+       <div class="col-lg-4"style="  padding: 0px;" >
+
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
+
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            SONY Xperia Z Ultra
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
+
+
+                                        <img src="image/sony-xperia-z-ultra-lte-c6833.png" class="  center-block" alt="Item image" width="150px" height="200px">
+
+
+                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
+                                                <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
+                                                    <b>Price</b>
+                                                </span>
+
+                                                <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
+                                                    <b>LKR 46900</b>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                Quantity
+                                            </span>
+                                            <input type="number" class="form-control" value="1" required="">
+                                            <span class="input-group-addon">  							
+                                                Stock: 99
+                                            </span>
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                                                Buy Now
+                                            </button>
+                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                Add To Cart
+                                            </button>
+                                            <button type="button" class="btn btn-warning" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+
 
                            
 
 
                         </div>
-
+<div id='page_navigation'></div>
                     </div>
-
-
-                    <div id="fb-root"></div>
-                    <script>(function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id))
-                                return;
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));</script>
-                    <div class="fb-like-box" data-href="https://www.facebook.com/pages/DialUp-4G/662747223843885" data-width="300px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
 
 
 
