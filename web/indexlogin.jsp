@@ -156,7 +156,7 @@
                                                 conn = DatabaseConnection.getConnection();
                                                 Statement stmt;
                                                 stmt = conn.createStatement();
-                                                String query = "SELECT make,model,item_image,price,qnt FROM items";
+                                                String query = "SELECT item_id,make,model,item_image,price,qnt FROM items";
                
                                                 ResultSet rs = stmt.executeQuery(query);
                                                 while (rs.next()) {
@@ -182,7 +182,7 @@
                                         <img src="image/<%=rs.getString(3)%>" class="  center-block" alt="Item image" width="150px" height="200px">
 
 
-                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                        <div ><a href="mobiledetails.jsp?device=<%rs.getString(0)%>" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
                                             <div class="input-group"style=>
                                                 <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
                                                     <b>Price</b>
