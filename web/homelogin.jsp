@@ -126,7 +126,7 @@
         <div class="col-lg-2"style="width: 330px;">
             <ul class="nav nav-pills nav-stacked"style="width: 280px;">
                 <li class="active"><a <i class="fa fa-home fa-fw"></i>Category</a></li>
-                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>APPLE</a></li>
+                <li><a href="selectcategory.jsp?type=htc"><i class="fa fa-list-alt fa-fw"></i>APPLE</a></li>
                 <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>HTC</a></li>
                 <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>MICROSOFT</a></li>
                 <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>NOKIA</a></li>
@@ -136,7 +136,7 @@
 
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a <i class="fa fa-home fa-fw"></i>Category</a></li>
-                    <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>APPLE</a></li>
+                    <li><a href="selectcategory.jsp?type=htc"><i class="fa fa-list-alt fa-fw"></i>APPLE</a></li>
                     <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>HTC</a></li>
                     <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>MICROSOFT</a></li>
                     <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>NOKIA</a></li>
@@ -158,7 +158,7 @@
 $(document).ready(function(){
 	
 	//how much items per page to show
-	var show_per_page = 9; 
+	var show_per_page = 3; 
 	//getting the amount of elements inside content div
 	var number_of_items = $('#content').children().size();
 	//calculate the number of pages we are going to have
@@ -257,12 +257,12 @@ function go_to_page(page_num){
 	<input type='hidden' id='show_per_page' />
 
                         <div class="row" id='content'>
-<%
+                                            <%
                                                 Connection conn;
                                                 conn = DatabaseConnection.getConnection();
                                                 Statement stmt;
                                                 stmt = conn.createStatement();
-                                                String query = "SELECT make,model,item_image,price,qnt FROM items";
+                                                String query = "SELECT make,model,item_image,price,qnt,item_id FROM items";
                
                                                 ResultSet rs = stmt.executeQuery(query);
                                                 while (rs.next()) {
@@ -288,7 +288,7 @@ function go_to_page(page_num){
                                         <img src="image/<%=rs.getString(3)%>" class="  center-block" alt="Item image" width="150px" height="200px">
 
 
-                                        <div ><a href="mobiledetails.jsp" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                        <div ><a href="mobiledetails.jsp?id=<%=rs.getString(6)%>" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
                                             <div class="input-group"style=>
                                                 <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
                                                     <b>Price</b>

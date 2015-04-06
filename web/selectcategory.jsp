@@ -2,7 +2,6 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="Classes.DatabaseConnection"%>
 <%@page import="java.sql.Connection"%>
-<!DOCTYPE html>
 <html lang="en">
     <head>        
         <meta charset="utf-8">
@@ -105,35 +104,44 @@
                     <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-list-alt fa-fw"></i>SONY</a></li>
 
                     </div> 
-
-        <%                                              String id=request.getParameter("id");
+        
+         <%
                                                 Connection conn;
                                                 conn = DatabaseConnection.getConnection();
                                                 Statement stmt;
                                                 stmt = conn.createStatement();
-                                                String query = "SELECT item_image,make,model,price,qnt,network,launch,display,platform,memory,camera,item_id FROM items WHERE item_id='"+id+"'";
-               
+                                                String type=request.getParameter("type");
+                                                String query = "SELECT make,model,item_image,price,qnt,item_id FROM items where make='"+type+"'";
+           
                                                 ResultSet rs = stmt.executeQuery(query);
                                                 while (rs.next()) {
-
+                                                
+                                                
+                                                
+                                                
                                             %>
+                                            
+                                            <div class="col-lg-2"style="  padding: 0px;" >
 
-                    <div class="centertext">
+                                <!--panel of item-->
+                                <div class="panel panel-success text-center" style="margin: 5px; border-radius:0px; box-shadow: 0px 0px 2px 2px gray;">
 
-                        <div class="col-md-4 col-sm-12 col-xs-12 product-viewer clearfix">
-                            <div id="product-image-container">
+                                    <!--panel heading/title-->
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <%=rs.getString(1)%> <%=rs.getString(2)%>
+                                        </h6>
+                                    </div>
+
+                                    <!--panel body-->
+                                    <div class="panel-body">
 
 
-                                <img src="image/<%=rs.getString(1)%>" </a>		
+                                        <img src="image/<%=rs.getString(3)%>" class="  center-block" alt="Item image" width="150px" height="200px">
 
-                            </div>   
 
-                        </div>
-
-                        <div class="col-md-4 col-sm-12 col-xs-12 product">
-                            <h1 class="product-name"><%=rs.getString(2)%></h1>
-                            <h2 class="product-name"><%=rs.getString(3)%></h2>
-                             <div class="input-group"style=>
+                                        <div ><a href="mobiledetails.jsp?id=<%=rs.getString(6)%>" data-toggle="tooltip" title="View Item" class="btn btn-primary btn-sm btn-block"><i class="glyphicon glyphicon-info-sign"><b>View Item</b> </i></a>
+                                            <div class="input-group"style=>
                                                 <span class="input-group-addon"style="background-color: #20ADDC; color:white ">
                                                     <b>Price</b>
                                                 </span>
@@ -141,7 +149,14 @@
                                                 <span class="input-group-addon"style="background-color: #20ADDC;color: white">  							
                                                     <b>LKR <%=rs.getString(4)%></b>
                                                 </span>
-                                                 <div class="input-group">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--panel footer-->
+                                    <div class="panel-footer">
+                                        <div class="input-group">
                                             <span class="input-group-addon">
                                                 Quantity
                                             </span>
@@ -150,9 +165,11 @@
                                                 Stock: <%=rs.getString(5)%>
                                             </span>
                                         </div>
-                                            </div><br><br><br><br>
-                            <div class="btn-group btn-group-sm" role="group">
-                                            <button type="button" class="btn btn-success" aria-label="Left Align">
+
+                                        <br/>
+
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button type="button" class="btn btn-danger" aria-label="Left Align">
                                                 <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
                                                 Buy Now
                                             </button>
@@ -161,42 +178,21 @@
                                                 Add To Cart
                                             </button>
                                             <button type="button" class="btn btn-warning" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                                Add To watch List
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                Save
                                             </button>
-                            </div></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>             
+
+<%}%>
+
+                           
+
+
+                        </div>
+
                                             
-                        
-                        
-                        
-                        <table cellspacing="0" class="table table-bordered table-striped" style=" width: 802px;">
-                            <tbody><tr>
-                                    <th scope="row" rowspan="6">General</th>
-                                    <td class="ttl">Network</td>
-                                    <td class="nfo"><%=rs.getString(6)%></td>
-                                </tr><tr>
-                                    <td class="ttl">Launch</td>
-                                    <td class="nfo"><%=rs.getString(7)%></td>
-                                </tr>
-                                <tr>
-                                    <td class="ttl">Display</td>
-                                    <td class="nfo"><%=rs.getString(8)%></td>
-                                </tr>
-                                <tr>
-                                    <td class="ttl">Platform</td>
-                                    <td class="nfo"><%=rs.getString(9)%></td>
-                                </tr>
-                                <tr>
-                                    <td class="ttl">Memory</td>
-                                    <td class="nfo"><%=rs.getString(10)%></td>
-                                </tr>
-                                <tr>
-                                    <td class="ttl">Camera</td>
-                                    <td class="nfo"><%=rs.getString(11)%></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                                <%}%>
-                    </div><!-- End .tab-pane -->
-
