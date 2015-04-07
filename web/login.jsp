@@ -90,7 +90,7 @@
           
           <input type="email" name="email" placeholder="Email" required class="form-control input-lg" placeholde="Your Email" />
           
-          <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          <input type="password" name="pw" class="form-control input-lg" id="password" placeholder="Password" required="" />
           
           
           <div class="pwstrength_viewport_progress"></div>

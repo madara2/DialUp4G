@@ -245,7 +245,7 @@ function go_to_page(page_num){
 </style>
                                             
                    
-                     <div class="col-lg-9"> <p class="bg-title">Mobiles</p>
+                     <dzziv class="col-lg-9"> <p class="bg-title">Mobiles</p>
   <input type='hidden' id='current_page' />
 	<input type='hidden' id='show_per_page' />
 
@@ -297,32 +297,36 @@ function go_to_page(page_num){
 
                                     <!--panel footer-->
                                     <div class="panel-footer">
+                                        
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 Quantity
-                                            </span>
-                                            <input type="number" class="form-control" value="1" required="">
+                                            </span><input type="hidden" name="item_id" value="<%=rs.getString(6)%>">
+                                            <input type="number" class="form-control"  required="">
                                             <span class="input-group-addon">  							
                                                 Stock: <%=rs.getString(5)%>
                                             </span>
                                         </div>
 
                                         <br/>
-
+                                        <form action="updateCart.jsp" method="POST">
                                         <div class="btn-group btn-group-sm" role="group">
                                             <button type="button" class="btn btn-danger" aria-label="Left Align">
                                                 <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
                                                 Buy Now
                                             </button>
-                                            <button type="button" class="btn btn-info" aria-label="Left Align">
+                                             <button type="button" onclick="" class="btn btn-info" aria-label="Left Align">
                                                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                                                 Add To Cart
                                             </button>
+                                            
                                             <button type="button" class="btn btn-warning" aria-label="Left Align">
                                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                                 Save
                                             </button>
+                                            <input type="hidden" name="product_code" value=<%= rs.getString(6)%> />
                                         </div>
+                                        </form>
                                     </div>
 
                                 </div>
