@@ -17,25 +17,25 @@
         String qty=request.getParameter("qty");
         String url=request.getParameter("return_url");
         
-        String sql="SELECT make,price FROM items WHERE item_id='"+item_id+"' LIMIT 1";
+        String sql="SELECT model,price FROM items WHERE item_id='"+item_id+"' LIMIT 1";
         
         Statement st=DatabaseConnection.getConnection().createStatement();
          ResultSet rs=st.executeQuery(sql);
          List<Product> ls=new ArrayList<Product>();
          Product pro=null;
          while(rs.next()){
-            pro=new item_id(item_id, rs.getString(1), qty, rs.getString(2));
+            pro=new Product(item_id,rs.getString(1) qty, rs.getString(2));
          }
          ls.add(pro);
          if(session.getAttribute("prodc")==null){
              session.setAttribute("prodc", ls);
-             //response.sendRedirect(url);
+             response.sendRedirect(url);
          }else{
              boolean b=true;
              ls=(List)session.getAttribute("prodc");
              for(int i=0;i<ls.size();i++){
-                 if(ls.get(i).getItem_id()).equals(pro.getItem_id())){
-                     ls.get(i).setProduct_qty(ls.get(i).getProduct_qty()+pro.getProduct_qty());
+                 if(ls.get(i).getItem_id().equals(pro.getItem_id())){
+                     ls.get(i).setQnt(ls.get(i).getQnt()+pro.getQnt());
                      b=false;
                      break;
                  }
@@ -49,4 +49,7 @@
          
          
         %>
-      
+        
+        
+    </body>
+</html>
